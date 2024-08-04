@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="Eskeleton4">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.037732 6.4505E-07 0.4175"
+        rpy="0 0 0" />
+      <mass
+        value="66.208" />
+      <inertia
+        ixx="0.23535"
+        ixy="3.9059E-06"
+        ixz="0.013551"
+        iyy="0.30864"
+        iyz="-1.3956E-06"
+        izz="0.24236" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Right Femur">
+    <inertial>
+      <origin
+        xyz="0.2113 -0.26103 0.0057553"
+        rpy="0 0 0" />
+      <mass
+        value="9.0376" />
+      <inertia
+        ixx="0.31165"
+        ixy="0.11305"
+        ixz="-0.003476"
+        iyy="0.051721"
+        iyz="0.012042"
+        izz="0.35623" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/Right Femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/Right Femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_1R"
+    type="revolute">
+    <origin
+      xyz="-0.033032 -0.076798 -0.25962"
+      rpy="1.5708 0.3558 -1.3534" />
+    <parent
+      link="base_link" />
+    <child
+      link="Right Femur" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.785"
+      upper="1.75"
+      effort="632"
+      velocity="1.4" />
+  </joint>
+  <link
+    name="tibia Right">
+    <inertial>
+      <origin
+        xyz="-0.086659 -0.20695 0.026507"
+        rpy="0 0 0" />
+      <mass
+        value="7.5257" />
+      <inertia
+        ixx="0.24277"
+        ixy="0.010693"
+        ixz="-1.2286E-05"
+        iyy="0.0036723"
+        iyz="0.0063708"
+        izz="0.24298" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/tibia Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/tibia Right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint 2R"
+    type="revolute">
+    <origin
+      xyz="0.21162 -0.53453 0.019535"
+      rpy="3.141 0.016615 -2.8217" />
+    <parent
+      link="Right Femur" />
+    <child
+      link="tibia Right" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.5"
+      upper="0"
+      effort="400"
+      velocity="2" />
+  </joint>
+  <link
+    name="sole Right">
+    <inertial>
+      <origin
+        xyz="-0.088298 -0.05155 0.034657"
+        rpy="0 0 0" />
+      <mass
+        value="0.42132" />
+      <inertia
+        ixx="0.00019431"
+        ixy="-6.9529E-06"
+        ixz="1.7215E-05"
+        iyy="0.00021619"
+        iyz="5.2128E-06"
+        izz="0.00011338" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/sole Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/sole Right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint 3R"
+    type="revolute">
+    <origin
+      xyz="0.005 -0.55388 0.029784"
+      rpy="0 0 0" />
+    <parent
+      link="tibia Right" />
+    <child
+      link="sole Right" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.4"
+      effort="1000"
+      velocity="4" />
+  </joint>
+  <link
+    name="Left Femur">
+    <inertial>
+      <origin
+        xyz="0.21127 -0.26085 -0.0092551"
+        rpy="0 0 0" />
+      <mass
+        value="9.0425" />
+      <inertia
+        ixx="0.31182"
+        ixy="0.11306"
+        ixz="0.0049885"
+        iyy="0.052128"
+        iyz="-0.016113"
+        izz="0.35605" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/Left Femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/Left Femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_1L"
+    type="revolute">
+    <origin
+      xyz="-0.0330316854268313 0.0767977161404361 -0.259622527480125"
+      rpy="1.5707963267949 0.355803022302202 1.35343007247512" />
+    <parent
+      link="base_link" />
+    <child
+      link="Left Femur" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.75"
+      upper="0.785"
+      effort="632"
+      velocity="1.4" />
+  </joint>
+  <link
+    name="tibia 2L">
+    <inertial>
+      <origin
+        xyz="0.086658 -0.20534 0.026563"
+        rpy="0 0 0" />
+      <mass
+        value="7.5246" />
+      <inertia
+        ixx="0.24273"
+        ixy="-0.010689"
+        ixz="9.3593E-05"
+        iyy="0.0037826"
+        iyz="0.0081927"
+        izz="0.24282" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/tibia 2L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/tibia 2L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint 2L"
+    type="revolute">
+    <origin
+      xyz="0.211609423149353 -0.534225380568541 -0.0266965498013103"
+      rpy="-0.000443135497586983 0.0123881327815661 0.320046383835979" />
+    <parent
+      link="Left Femur" />
+    <child
+      link="tibia 2L" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5"
+      effort="400"
+      velocity="2" />
+  </joint>
+  <link
+    name="sole Left">
+    <inertial>
+      <origin
+        xyz="0.083145 -0.050628 0.035614"
+        rpy="0 0 0" />
+      <mass
+        value="0.42036" />
+      <inertia
+        ixx="0.00019425"
+        ixy="6.5447E-06"
+        ixz="-1.7364E-05"
+        iyy="0.00021632"
+        iyz="2.7658E-06"
+        izz="0.00011318" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/sole Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Eskeleton4/meshes/sole Left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint 3L"
+    type="revolute">
+    <origin
+      xyz="0 -0.55223 0.032487"
+      rpy="0 0 0" />
+    <parent
+      link="tibia 2L" />
+    <child
+      link="sole Left" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.4"
+      upper="0"
+      effort="1000"
+      velocity="4" />
+  </joint>
+</robot>
