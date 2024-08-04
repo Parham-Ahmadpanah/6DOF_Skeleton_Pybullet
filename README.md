@@ -1,5 +1,6 @@
 An environment is built for a 6 degree of freedom Skeleton and you can use this env to make your own models or train a RL controller for your model. You can design any robot with any shape for any application, just follow the instructions please.
-![](Data/Env.png)
+<img src="Data/Env.png" alt="drawing" width="200"/>
+
 
 ### Make your own model
 Make your own URDF file.
