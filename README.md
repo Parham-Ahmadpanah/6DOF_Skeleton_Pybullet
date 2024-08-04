@@ -10,15 +10,15 @@ first you need to design your model cad in a software like SolidWorks. Then add 
 ### Start coding
 Firstly, clone the repository and make a virtual env to install required packages.
 ```
-$git clone https://github.com/Parham-Ahmadpanah/Skeleton-Pybullet
-$cd Skeleton-Pybullet
-$conda create --name Bullet_env python=3.9.19
-$conda activate Bullet_env
+git clone https://github.com/Parham-Ahmadpanah/Skeleton-Pybullet
+cd Skeleton-Pybullet
+conda create --name Bullet_env python=3.9.19
+conda activate Bullet_env
 ```
 Install the dependancies.
 ```
-$conda install conda-forge::pybullet
-$pip install -r requirements.txt
+conda install conda-forge::pybullet
+pip install -r requirements.txt
 ```
 You can run the main.py now and test whether the program works correctly. For changing the model, you need to modify the address of the URDF file in this line and the     get_observation_space(self) class with your desired lower and upper limit for observation space.
 
