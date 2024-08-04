@@ -3,7 +3,7 @@ An environment is built for a 6 degree of freedom Skeleton and you can use this 
 Make your own URDF file.
 first you need to design your model cad in a software like SolidWorks. Then add this extension "https://github.com/ros/solidworks_urdf_exporter/releases" to your SW and export the URDF file from SW. You can watch this video for more details: "https://www.youtube.com/watch?v=Id8zVHrQSlE"
 
-## Start coding
+### Start coding
 Firstly, make a virtual env to install required packages.
 ```
 conda create --name Bullet_env python=3.9.19
