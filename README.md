@@ -21,7 +21,7 @@ pip install -r requirements.txt
 You can run the main.py now and test whether the program works correctly. For changing the model, you need to modify the address of the URDF file in this line and the     get_observation_space(self) class with your desired lower and upper limit for observation space.
 
 ### Gait Cycle for initial control of robot
-To train your skeleton, the first rule can be the gait cycle. I used the data from "Side to side kinematic gait differences ..." by P. Ismailidisa et al. (2021) and made a gait cycle for ankle, knee, and hip function. By using "gait.py" in the repository, you can enter the percentage of right foot gait cycle to the function and it will give you 6 degrees of the joints.(Ankle, knee, and foot for each leg) 
+To train your skeleton, you can use the gait cycle. I used the data from "Side to side kinematic gait differences ..." by P. Ismailidisa et al. (2021) and made a gait cycle for ankle, knee, and hip function. By using "gait.py" in the repository, you can enter the percentage of right foot gait cycle to the function and it will give you 6 degrees of the joints.(Ankle, knee, and foot for each leg) 
 
 ### Control your model
 To make your model dynamically stable, you need to increase the number od DOF, however consider the harder training process. Design 2 classes of get_reward function and is_done function based on your knowledge and experience of the model you designed.
